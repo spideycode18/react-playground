@@ -1,0 +1,25 @@
+.app {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+  background: #fff;
+  font-size: 24px;
+}
+
+.app-header {
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.app-footer {
+  padding: 10px 15px;
+  text-align: center;
+  border-top: 1px solid #e6e6e6;
+  font-size: 14px;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 550px;
+  width: calc(100% - 20px);
+}
+.page-title {
+  text-align: center;
+}
