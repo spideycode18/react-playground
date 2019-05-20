@@ -13,12 +13,12 @@ const mapStateToProps = (state: any) => ({
   quantity: state.todos.length
 });
 
-const mapDispatchToProps = (dispatch: any) => ({
-  addTodo: (todo: TodoProps) => dispatch(addTodo(todo)),
-  removeTodo: (todo: TodoProps) => dispatch(removeTodo(todo)),
-  setStatus: (todo: TodoProps) => dispatch(setStatus(todo)),
-  setFilter: (filter: Filter) => dispatch(setFilter(filter)),
-});
+const mapDispatchToProps = {
+  addTodo,
+  removeTodo,
+  setStatus,
+  setFilter,
+};
 
 export default connect(
   mapStateToProps,
