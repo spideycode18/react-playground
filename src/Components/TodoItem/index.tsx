@@ -5,13 +5,13 @@ import { TodoProps, Filter } from '../../helper';
 interface TodoItemProps {
   index: number;
   todo: TodoProps;
-  onRemoveTodo: (todo: string) => void;
+  onRemoveTodo: (todo: TodoProps) => void;
   onChangeStatus: (todo: TodoProps) => void;
 }
 
 const TodoItem: React.FC<TodoItemProps> = ({index, todo, onRemoveTodo, onChangeStatus}) => {
   const handleRemoveTodo = () => {
-    onRemoveTodo(todo.todo);
+    onRemoveTodo(todo);
   }
 
   const handleChangeStatus = (event: React.ChangeEvent<HTMLInputElement>) => {

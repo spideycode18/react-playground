@@ -4,7 +4,7 @@ import { TodoProps } from '../../helper';
 
 interface TodoListProps {
   todos: TodoProps[];
-  onRemoveTodo: (todo: string) => void;
+  onRemoveTodo: (todo: TodoProps) => void;
   onChangeStatus: (todo: TodoProps) => void;
 }
 

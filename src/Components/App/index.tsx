@@ -6,7 +6,13 @@ import FilterList from '../FilterList';
 import { TodoProps, Filter } from '../../helper';
 
 interface Props {
-
+  todos: TodoProps[];
+  filter: Filter;
+  addTodo: (todo: TodoProps) => void;
+  removeTodo: (todo: TodoProps) => void;
+  setStatus: (todo: TodoProps) => void;
+  setFilter: (filter: Filter) => void;
+  quantity: number;
 }
 
 interface State {
@@ -45,22 +51,21 @@ class App extends React.Component<Props, State> {
   }
 
   render() {
-    const filterTodos = this.state.todos.filter((item: TodoProps) => this.state.filter === Filter.ALL || item.status === this.state.filter);
     return (
       <div className="wrapper">
         <h1 className="page-title">Todos</h1>
         <div className="app">
           <header className="app-header">
-            <TodoInput handleSubmit={this.addTodo} />
+            <TodoInput handleSubmit={this.props.addTodo} />
           </header>
           {
-            this.state.todos.length !== 0 &&
+            this.props.quantity !== 0 &&
             <>
               <main className="app-main">
-                <TodoList todos={filterTodos} onRemoveTodo={this.removeTodo} onChangeStatus={this.changeStatus} />
+                <TodoList todos={this.props.todos} onRemoveTodo={this.props.removeTodo} onChangeStatus={this.props.setStatus} />
               </main>
               <footer className="app-footer">
-                <FilterList filter={this.state.filter} onChangeFilter={this.changeFilter}/>
+                <FilterList filter={this.props.filter} onChangeFilter={this.props.setFilter}/>
               </footer>
             </>
           }
