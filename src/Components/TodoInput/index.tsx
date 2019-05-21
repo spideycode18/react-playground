@@ -20,8 +20,10 @@ class TodoInput extends React.Component<Props, State> {
 
   public handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    this.props.handleSubmit({todo: this.state.todo, status: Filter.ONGOING});
-    this.setState({todo: ''});
+    if(this.state.todo) {
+      this.props.handleSubmit({todo: this.state.todo, status: Filter.ONGOING});
+      this.setState({todo: ''});
+    }
   }
 
   render() {
