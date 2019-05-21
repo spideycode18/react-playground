@@ -2,13 +2,15 @@ import { connect } from 'react-redux';
 import { addTodo, removeTodo, setStatus, setFilter } from '../actions';
 import App from '../components/App';
 import { Filter, TodoProps } from '../helper';
+import { getVisibleTodos } from '../selectors';
 
-const getFilteredTodos = (todos: TodoProps[], filter: Filter) => {
-  return todos.filter((item: TodoProps) => filter === Filter.ALL || item.status === filter)
+export interface AppState {
+  todos: TodoProps[];
+  filter: Filter;
 }
 
-const mapStateToProps = (state: any) => ({
-  todos: getFilteredTodos(state.todos, state.filter),
+const mapStateToProps = (state: AppState) => ({
+  todos: getVisibleTodos(state),
   filter: state.filter,
   quantity: state.todos.length
 });
