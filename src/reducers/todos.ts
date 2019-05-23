@@ -1,4 +1,4 @@
-import { TodoProps } from '../helper';
+import { TodoProps } from '../types';
 import { TodoAction, Actions } from '../actions';
 
 const todos = (state: TodoProps[] = [], action: TodoAction): TodoProps[] => {

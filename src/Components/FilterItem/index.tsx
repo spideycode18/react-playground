@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import './filter.scss';
-import { Filter } from '../../helper';
+import { Filter } from '../../types';
 
 interface FilterItemProps {
   filter: Filter;

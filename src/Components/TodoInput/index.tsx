@@ -1,6 +1,6 @@
 import React from 'react';
 import './input.scss';
-import { TodoProps, Filter } from '../../helper';
+import { TodoProps, Filter } from '../../types';
 
 interface Props {
   handleSubmit: (todo: TodoProps) => void;

@@ -1,21 +1,16 @@
 import React from 'react';
 import './app.scss';
 import TodoInput from '../TodoInput';
-import TodoList from '../TodoList';
-import FilterList from '../FilterList';
-import { TodoProps, Filter } from '../../helper';
+import TodoList from '../../containers/TodoListContainer';
+import FilterList from '../../containers/FilterListContainer';
+import { TodoProps } from '../../types';
 
 interface Props {
-  todos: TodoProps[];
-  filter: Filter;
   addTodo: (todo: TodoProps) => void;
-  removeTodo: (todo: TodoProps) => void;
-  setStatus: (todo: TodoProps) => void;
-  setFilter: (filter: Filter) => void;
   quantity: number;
 }
 
-const App: React.FC<Props> = ({todos, filter, addTodo, removeTodo, setStatus, setFilter, quantity}) => {
+const App: React.FC<Props> = ({addTodo, quantity}) => {
   return (
     <div className="wrapper">
       <h1 className="page-title">Todos</h1>
@@ -27,10 +22,10 @@ const App: React.FC<Props> = ({todos, filter, addTodo, removeTodo, setStatus, se
           quantity !== 0 &&
           <>
             <main className="app-main">
-              <TodoList todos={todos} onRemoveTodo={removeTodo} onChangeStatus={setStatus} />
+              <TodoList />
             </main>
             <footer className="app-footer">
-              <FilterList filter={filter} onChangeFilter={setFilter}/>
+              <FilterList />
             </footer>
           </>
         }

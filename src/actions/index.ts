@@ -1,4 +1,4 @@
-import { Filter, TodoProps } from '../helper';
+import { Filter, TodoProps } from '../types';
 
 export enum Actions {
   ADD_TODO = 'ADD_TODO',

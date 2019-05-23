@@ -1,6 +1,6 @@
 import React from 'react';
 import './item.scss';
-import { TodoProps, Filter } from '../../helper';
+import { TodoProps, Filter } from '../../types';
 
 interface TodoItemProps {
   index: number;

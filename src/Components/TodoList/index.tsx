@@ -1,18 +1,18 @@
 import React from 'react';
 import TodoItem from '../TodoItem';
-import { TodoProps } from '../../helper';
+import { TodoProps } from '../../types';
 
 interface TodoListProps {
   todos: TodoProps[];
-  onRemoveTodo: (todo: TodoProps) => void;
-  onChangeStatus: (todo: TodoProps) => void;
+  removeTodo: (todo: TodoProps) => void;
+  setStatus: (todo: TodoProps) => void;
 }
 
-const TodoList: React.FC<TodoListProps> = ({todos, onRemoveTodo, onChangeStatus}) => {
+const TodoList: React.FC<TodoListProps> = ({todos, removeTodo, setStatus}) => {
   return (
     <div className="todo-list">
       {
-        todos.map((item: TodoProps, index: number) => <TodoItem key={index} todo={item} index={index} onRemoveTodo={onRemoveTodo} onChangeStatus={onChangeStatus} /> )
+        todos.map((item: TodoProps, index: number) => <TodoItem key={index} todo={item} index={index} onRemoveTodo={removeTodo} onChangeStatus={setStatus} /> )
       }
     </div>
   );

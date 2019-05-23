@@ -1,4 +1,4 @@
-import { Filter } from '../helper';
+import { Filter } from '../types';
 import { FilterAction, Actions } from '../actions';
 
 const filter = (state: Filter = Filter.ALL, action: FilterAction): Filter => {

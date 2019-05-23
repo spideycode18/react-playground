@@ -8,3 +8,8 @@ export enum Filter {
   ONGOING = 'ongoing',
   DONE = 'done'
 }
+
+export interface AppState {
+  todos: TodoProps[];
+  filter: Filter;
+}
